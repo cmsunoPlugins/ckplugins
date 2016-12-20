@@ -1,0 +1,152 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: CmsUno\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-12-20 19:05+0100\n"
+"PO-Revision-Date: 2016-12-20 19:05+0100\n"
+"Last-Translator: jacques Malgrange <contacter@boiteasite.fr>\n"
+"Language-Team: Jacques Malgrange <contacter@boiteasite.fr>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Report-\tmsgstr-Bugs-To: \n"
+"Report-\t\tmsgstr-Bugs-To: \n"
+"X-Poedit-KeywordsList: _;T_\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-Country: FRANCE\n"
+"X-Poedit-SourceCharset: iso-8859-1\n"
+"X-Poedit-Language: French\n"
+"X-Poedit-SearchPath-0: ../../..\n"
+
+#: ../../../ckplugins.php:18
+msgid "CKplugins"
+msgstr "CKplugins"
+
+#: ../../../ckplugins.php:19
+msgid "This plugin allows you to add new features / buttons to the editor."
+msgstr "Ce plugin permet d'ajouter des fonctionnalités / boutons à l'éditeur."
+
+#: ../../../ckplugins.php:20
+msgid "You just need to upload your CKEditor plugin with the form bellow (Zip file)."
+msgstr "Il vous suffit de télécharger votre plugin CKEditor avec le formulaire ci-dessous (fichier Zip)."
+
+#: ../../../ckplugins.php:21
+msgid "Add a CKEditor plugin"
+msgstr "Ajouter un plugin CKEditor"
+
+#: ../../../ckplugins.php:24
+msgid "CKEditor plugin (zip)"
+msgstr "Plugin CKEditor (zip)"
+
+#: ../../../ckplugins.php:27
+msgid "File manager"
+msgstr "Gestionnaire de fichiers"
+
+#: ../../../ckplugins.php:27
+msgid "File Manager"
+msgstr "Finder"
+
+#: ../../../ckplugins.php:28
+msgid "Zip file needed"
+msgstr "Fichier Zip requis"
+
+#: ../../../ckplugins.php:28
+msgid "Add plugin"
+msgstr "Ajouter un plugin"
+
+#: ../../../ckplugins.php:28
+msgid "Add"
+msgstr "Ajouter"
+
+#: ../../../ckplugins.php:30
+msgid "Upload Zip file with finder and select it."
+msgstr "Télécharger le fichier Zip avec le finder et le sélectionner."
+
+#: ../../../ckplugins.php:33
+msgid "CKEditor special config"
+msgstr "Configuration spéciale pour CKEditor"
+
+#: ../../../ckplugins.php:37
+msgid "Add special command but not config.extraConfig."
+msgstr "Ajouter des commandes spécifiques hors config.extraConfig."
+
+#: ../../../ckplugins.php:40
+msgid "Save config"
+msgstr "Sauvegarder la config"
+
+#: ../../../ckplugins.php:42
+msgid "Existing plugins :"
+msgstr "Plugins existants :"
+
+#: ../../../ckplugins.php:67
+msgid "Installed"
+msgstr "Installé"
+
+#: ../../../ckplugins.php:68
+#: ../../../ckplugins.php:72
+#: ../../../ckplugins.php:82
+#: ../../../ckplugins.php:96
+msgid "Error"
+msgstr "Erreur"
+
+#: ../../../ckplugins.php:81
+msgid "Saved"
+msgstr "Enregistré"
+
+#: ../../../ckplugins.php:95
+msgid "Plugin removed"
+msgstr "Plugin supprimé"
+
+#~ msgid "Box"
+#~ msgstr "Box"
+
+#~ msgid ""
+#~ "This plugin allows you to add small blocks of content. For example: a "
+#~ "date, an address, a phone number."
+#~ msgstr ""
+#~ "Ce plugin permet d'ajouter des petits blocs de contenu. Par exemple : une "
+#~ "date, une adresse, un numéro de téléphone."
+
+#~ msgid ""
+#~ "It can also add a big HTML content as a sidebar or something else. For "
+#~ "this you should choose HTML editor."
+#~ msgstr ""
+#~ "Vous pouvez également ajouter un gros bloc HTML comme une barre laterale "
+#~ "ou autres. Choisissez alors l'Editeur HTML."
+
+#~ msgid "Just insert the code"
+#~ msgstr "Il suffit d'ins&eacute;rer le code"
+
+#~ msgid "nameofthebox"
+#~ msgstr "nomdubloc"
+
+#~ msgid "in the template or in the page content."
+#~ msgstr "dans le template ou dans le contenu de la page."
+
+#~ msgid "You can create as many box as you need."
+#~ msgstr "Vous pouvez créer autant de blocs que nécessaires."
+
+#~ msgid "Add a box :"
+#~ msgstr "Ajouter un bloc :"
+
+#~ msgid "Name of the box"
+#~ msgstr "Nom du bloc"
+
+#~ msgid "Plain text"
+#~ msgstr "Texte brut"
+
+#~ msgid "HTML Editor"
+#~ msgstr "Editeur HTML"
+
+#~ msgid "Add the box"
+#~ msgstr "Ajoute le bloc"
+
+#~ msgid "Save settings"
+#~ msgstr "Enregistre le contenu"
+
+#~ msgid "Backup performed"
+#~ msgstr "Sauvegarde effectu&eacute;e"
+
+#~ msgid "Impossible backup"
+#~ msgstr "Sauvegarde impossible"
