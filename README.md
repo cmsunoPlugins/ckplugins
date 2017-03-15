@@ -30,4 +30,5 @@ Add as many CKEditor plugins as you like.
 
 ### Versions ###
 
+* 1.0.1 - 15/03/2017 : Fix issue when unknow lang
 * 1.0 - 20/12/2016 : First stable version
