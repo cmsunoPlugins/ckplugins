@@ -10,5 +10,6 @@ for(i=0;i<ckplug.length;++i){
 }
 CKEDITOR.editorConfig=function(config){
 	if(ckplugextra!='')config.extraPlugins+=ckplugextra;
+	
 	if(UconfigFile.length>UconfigNum)config.customConfig=UconfigFile[UconfigNum];
 };

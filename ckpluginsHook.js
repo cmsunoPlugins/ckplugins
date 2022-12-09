@@ -3,9 +3,9 @@
 // Plugin CKplugins
 //
 var ckplug=[],ckplugconf;
-jQuery(document).ready(function(){
-	jQuery.getJSON("uno/data/ckplugins.json?r="+Math.random(),function(data){
-		ckplugconf=data.conf;
-		jQuery.each(data.ckplug,function(k,d){ckplug[k]=d;});
-	});
+fetch("uno/data/ckplugins.json?r="+Math.random())
+.then(r=>r.json())
+.then(function(data){
+	ckplugconf=data.conf;
+	data.ckplug.forEach(function(v,k){ckplug[k]=v;});
 });

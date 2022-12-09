@@ -1,6 +1,5 @@
 <?php
 session_start(); 
-if(!isset($_SERVER['HTTP_X_REQUESTED_WITH']) || strtolower($_SERVER['HTTP_X_REQUESTED_WITH'])!='xmlhttprequest') {sleep(2);exit;} // ajax request
 if(!isset($_POST['unox']) || $_POST['unox']!=$_SESSION['unox']) {sleep(2);exit;} // appel depuis uno.php
 ?>
 <?php
@@ -8,10 +7,8 @@ include('../../config.php');
 include('lang/lang.php');
 if(!file_exists('../../data/ckplugins.json')) file_put_contents('../../data/ckplugins.json', '{"ckplug":[],"conf":""}');
 // ********************* actions *************************************************************************
-if (isset($_POST['action']))
-	{
-	switch ($_POST['action'])
-		{
+if (isset($_POST['action'])) {
+	switch ($_POST['action']) {
 		// ********************************************************************************************
 		case 'plugin': ?>
 		<div class="blocForm">
@@ -54,21 +51,19 @@ if (isset($_POST['action']))
 		$a = json_decode($q,true);
 		$zip = new ZipArchive;
 		$f = $zip->open('../../..'.$_POST['z']);
-		if($f===true)
-			{
+		if($f===true) {
 			$zip->extractTo('../../data/ckplugins/tmp/');
 			$p = findFile('plugin.js','../../data/ckplugins/tmp/');
-			if($p)
-				{
+			if($p) {
 				$n = basename(dirname($p));
 				copyDir(dirname($p),'../../data/ckplugins/'.$n.'/',$p=0755);
 				rmdirR('../../data/ckplugins/tmp/');
 				if(!in_array($n,$a['ckplug'])) $a['ckplug'][] = $n;
 				if(file_put_contents('../../data/ckplugins.json', json_encode($a))) echo $n.' '.T_('Installed');
 				else echo '!'.T_('Error');
-				}
-			$zip->close();
 			}
+			$zip->close();
+		}
 		else echo '!'.T_('Error');
 		break;
 		// ********************************************************************************************
@@ -85,73 +80,62 @@ if (isset($_POST['action']))
 		case 'del':
 		$q = file_get_contents('../../data/ckplugins.json');
 		$a = json_decode($q,true);
-		if(in_array($_POST['p'],$a['ckplug']))
-			{
+		if(in_array($_POST['p'],$a['ckplug'])) {
 			$k = array_search($_POST['p'],$a['ckplug']);
 			unset($a['ckplug'][$k]);
 			$a['ckplug'] = array_values($a['ckplug']);
-			}
+		}
 		rmdirR('../../data/ckplugins/'.$_POST['p'].'/');
 		if(file_put_contents('../../data/ckplugins.json', json_encode($a))) echo T_('Plugin removed');
 		else echo '!'.T_('Error');
 		break;
 		// ********************************************************************************************
-		}
+	}
 	clearstatcache();
 	exit;
-	}
+}
 //
-function findFile($f,$d)
-	{
+function findFile($f,$d) {
 	if(substr($d,-1,1)!="/") $d.="/";
-	if(is_dir($d))
-		{
+	if(is_dir($d)) {
 		$dh = opendir($d);
-		while($fn=readdir($dh))
-			{
-			if(is_file($d.$fn) && $fn==$f)
-				{
+		while($fn=readdir($dh)) {
+			if(is_file($d.$fn) && $fn==$f) {
 				closedir($dh);
 				return $d.$fn;
-				}
-			if($fn!="." && $fn!=".." && is_dir($d.$fn))
-				{
+			}
+			if($fn!="." && $fn!=".." && is_dir($d.$fn)) {
 				$r = findFile($f,$d.$fn);
-				if($r)
-					{
+				if($r) {
 					closedir($dh);
 					return $r;
-					}
 				}
 			}
-		closedir($dh);
 		}
+		closedir($dh);
+	}
 	return false;
-    }
+}
 //
-function copyDir($s,$d,$p=0755)
-	{
+function copyDir($s,$d,$p=0755) {
 	if(is_link($s)) return symlink(readlink($s), $d);
 	if(is_file($s)) return copy($s, $d);
 	if(!is_dir($d)) mkdir($d, $p);
 	$dir = dir($s);
-	while(false!==$e=$dir->read())
-		{
+	while(false!==$e=$dir->read()) {
 		if($e=='.'||$e=='..') continue;
 		copyDir($s.'/'.$e, $d.'/'.$e, $p);
-		}
+	}
 	$dir->close();
 	return true;
-	}
+}
 //
-function rmdirR($d)
-	{
+function rmdirR($d) {
 	$files = array_diff(scandir($d), array('.','..'));
-	foreach($files as $f)
-		{
+	foreach($files as $f) {
 		(is_dir("$d/$f")) ? rmdirR("$d/$f") : unlink("$d/$f");
-		}
-	return rmdir($d);
 	}
+	return rmdir($d);
+}
 //
 ?>
